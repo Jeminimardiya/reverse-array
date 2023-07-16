@@ -1,0 +1,27 @@
+#import a os file 
+import os
+# creat a function is reversedArray(a) 
+def reverseArray(a):
+    # reversed_list is creat a new list to store a elements of a[]
+    # a[::-1 ] means it use sliceing opretor to use reverse elements.
+    reversed_list = a[::-1]
+    return reversed_list
+
+
+if __name__ == '__main__':
+# open(filename,mode)
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+#arr_count variable is used to store number of element like 4 
+    arr_count = int(input().strip())
+
+#arr is to creat list and store elements 
+    arr = list(map(int, input().rstrip().split()))
+
+#res is to store reverse array and reverseArray(arr) is function call 
+    res = reverseArray(arr)
+
+    fptr.write(' '.join(map(str, res)))
+    fptr.write('\n')
+
+    fptr.close()
